@@ -26,7 +26,8 @@ function forum_insert($request){
         $$key = mysqli_real_escape_string($connex, $value);
     }
     $user_id = mysqli_real_escape_string($connex, $_SESSION['user_id']);
-    $sql = "INSERT INTO forum (forum_title, forum_article, user_id) VALUES ('$forum_title', '$forum_article', '$user_id')";    if(mysqli_query($connex, $sql)){
+    $sql = "INSERT INTO forum (forum_title, forum_article, user_id) VALUES ('$forum_title', '$forum_article', '$user_id')";    
+    if(mysqli_query($connex, $sql)){
         return mysqli_insert_id($connex);
     }else{
         return false;

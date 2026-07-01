@@ -14,7 +14,7 @@ function user_store($request){
         $$key = mysqli_real_escape_string($connex, $value);
     }
     $user_password = password_hash($user_password, PASSWORD_BCRYPT, ['cost' => 10]);
-    $sql = "INSERT INTO user (user_name, user_pseudonyme, user_password) VALUES ('$user_name', '$user_pseudonyme', '$user_password')";
+    $sql = "INSERT INTO user (user_name, user_pseudonyme, user_birthdate, user_password) VALUES ('$user_name', '$user_pseudonyme', '$user_birthdate', '$user_password')";    
     if(mysqli_query($connex, $sql)){
         return true;
     }else{
